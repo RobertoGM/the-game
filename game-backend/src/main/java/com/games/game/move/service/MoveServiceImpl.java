@@ -1,15 +1,14 @@
 package com.games.game.move.service;
 
-import com.games.game.move.entities.MoveDto;
-import com.games.game.move.entities.MoveTypeEnum;
+import com.games.game.move.Models.MoveDto;
+import com.games.game.move.Models.MoveTypeEnum;
 import org.springframework.stereotype.Service;
 
-import java.util.Random;
-
 @Service
-public class MoveServiceImpl {
+public class MoveServiceImpl implements MoveService {
 
-    public MoveDto move() {
+    // Create random move from the enum of valid moves and return it
+    public MoveDto cpuMove() {
         MoveDto cpuMove = new MoveDto();
         cpuMove.setMove(MoveTypeEnum.randomMove());
         return cpuMove;

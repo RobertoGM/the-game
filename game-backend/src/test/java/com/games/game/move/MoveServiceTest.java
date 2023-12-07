@@ -1,29 +1,39 @@
 package com.games.game.move;
 
-import com.games.game.move.controller.MoveControllerImpl;
+import com.games.game.move.Models.MoveTypeEnum;
 import com.games.game.move.service.MoveServiceImpl;
 import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.InjectMocks;
+import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.test.web.client.TestRestTemplate;
-import org.springframework.boot.test.web.server.LocalServerPort;
-import static org.assertj.core.api.Assertions.assertThat;
+
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @SpringBootTest
+@ExtendWith(MockitoExtension.class)
 class MoveServiceTest {
 
-    @Autowired
+    @InjectMocks
     private MoveServiceImpl moveServiceImpl;
- 
     @Test
-    void controllerLoads() throws Exception {
-        assertThat(moveControllerImpl).isNotNull();
-    }
+    void moveShouldReturnValidMove() {
+        String move = moveServiceImpl.cpuMove().getMove().toString();
 
+        // List of valid moves out of the enum
+        List<String> legalMoves = Stream.of(MoveTypeEnum.values())
+                .map(MoveTypeEnum::name)
+                .collect(Collectors.toList());
 
-    @Test
-    void moveShouldReturnValidMove() throws Exception {
-        assertThat(this.restTemplate.getForObject("http://localhost:" + port + "/move",
-                String.class)).contains("Hello, World");
+        // Check the move returned from the service matches a legal move
+        assertTrue(legalMoves.stream().anyMatch(e -> e.equalsIgnoreCase(move)));
+
+        // Check the assert is not providing false positives by making sure the test asser false under an illegal move
+        assertFalse(legalMoves.stream().anyMatch(e -> e.equalsIgnoreCase("WOOD")));
     }
 }

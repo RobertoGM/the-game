@@ -1,4 +1,4 @@
-package com.games.game.move.entities;
+package com.games.game.move.Models;
 
 
 import java.util.Random;

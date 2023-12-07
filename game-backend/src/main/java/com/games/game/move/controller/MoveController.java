@@ -1,7 +1,7 @@
 package com.games.game.move.controller;
 
-import com.games.game.move.entities.MoveDto;
+import com.games.game.move.Models.MoveDto;
 
 public interface MoveController {
-    MoveDto move(MoveDto movedto);
+    MoveDto move();
 }

@@ -1,8 +1,8 @@
 package com.games.game.move.service;
 
-import com.games.game.move.entities.MoveDto;
+import com.games.game.move.Models.MoveDto;
 
 public interface MoveService {
 
-    public MoveDto playerMove ();
+    public MoveDto cpuMove ();
 }
