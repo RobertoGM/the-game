@@ -1,0 +1,38 @@
+@import "abstracts/variables";
+
+.button {
+  @include pad();
+  @include push-top();
+  @extend .font-bold;
+}
+
+.button__primary {
+  @extend .button;
+
+  display: block;
+  width: 400px;
+  border-radius: 4px;
+  background-color: $primary;
+  color: white;
+  border: none;
+  text-align: center;
+  box-sizing: border-box;
+
+  text-decoration: none;
+
+  &:active {
+    background-color: rgba($primary, 0.8);
+  }
+  &:hover {
+    box-shadow: 7px 6px 28px 1px rgba(0, 0, 0, 0.24);
+  }
+
+  &:disabled {
+    background-color: rgba($grey, 0.8);
+    box-shadow: none;
+  }
+}
+
+.button__primary--disabled {
+  pointer-events: none;
+}

@@ -1,0 +1,16 @@
+@import "abstracts/variables";
+@import "abstracts/mixins";
+@import "base/typography";
+
+.footer-main {
+    background-color: $black;
+    color: $white;
+    height: $app-footer-height;
+
+    @include pad();
+    @extend .font-l;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}

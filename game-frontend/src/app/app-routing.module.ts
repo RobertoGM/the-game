@@ -8,6 +8,11 @@ export const routes: Routes = [
     loadChildren: () =>
       import('./game/homepage/homepage.module').then((m) => m.HomePageModule),
   },
+  {
+    path: 'board',
+    loadChildren: () =>
+      import('./game/board/board.module').then((m) => m.BoardModule),
+  },
   // Set Home as entrypoint of the app routing
   {
     path: '',

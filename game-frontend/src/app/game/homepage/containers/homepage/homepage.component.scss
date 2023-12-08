@@ -1,0 +1,32 @@
+@import "abstracts/variables";
+@import "abstracts/mixins";
+@import "base/typography";
+
+.homepage {
+  @include pad();
+  &__title {
+    @extend .font-bold;
+    font-size: $font-xl;
+  }
+  &__game-figures {
+    display: flex;
+    flex-direction: row;
+
+    @media screen and (max-width: $breakpoint-tablet) {
+      flex-direction: column;
+    }
+
+    &__figure {
+      text-align: center;
+    }
+    &__img {
+      @include push();
+      @include pad();
+      height: 100px;
+      width: 100px;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+        0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      border-radius: 100%;
+    }
+  }
+}

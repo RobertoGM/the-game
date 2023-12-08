@@ -1,0 +1,30 @@
+// SPACING
+$pad-margin-multiplier: 4px;
+
+//THEME COLORS
+$primary: #577adb;
+$secondary: #c96b4e;
+
+// SURFACE COLORS
+$white: #ffffff;
+$grey: #757575;
+$black: #2E363D;
+
+// FONT-SIZES
+$font-xs: 10px;
+$font-s: 12px;
+$font-m: 14px;
+$font-l: 16px;
+$font-xl: 20px;
+$font-xxl: 24px;
+
+// LAYOUT VARIABLES
+$app-header-height: 66px;
+$app-footer-height: 100px;
+$app-min-width: 325px;
+$app-max-width: 1600px;
+
+// RESPONSIVE BREAKPOINTS
+$breakpoint-desktop: 1440px;
+$breakpoint-tablet: 768px;
+$breakpoint-mobile: 400px;
