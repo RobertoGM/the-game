@@ -27,7 +27,7 @@
           "error",
           {
             "type": "element",
-            "prefix": ["app", "core", "board"],
+            "prefix": ["app", "core", "game"],
             "style": "kebab-case"
           }
         ]

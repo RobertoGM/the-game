@@ -4,25 +4,18 @@
   @include pad();
   @include push-top();
   @extend .font-bold;
-}
 
-.button__primary {
-  @extend .button;
-
-  display: block;
-  width: 400px;
-  border-radius: 4px;
-  background-color: $primary;
-  color: white;
+  background-color: transparent;
   border: none;
   text-align: center;
   box-sizing: border-box;
-
+  border-radius: 4px;
   text-decoration: none;
 
   &:active {
     background-color: rgba($primary, 0.8);
   }
+
   &:hover {
     box-shadow: 7px 6px 28px 1px rgba(0, 0, 0, 0.24);
   }
@@ -30,6 +23,27 @@
   &:disabled {
     background-color: rgba($grey, 0.8);
     box-shadow: none;
+  }
+
+  &:focus {
+    outline: 0;
+  }
+}
+
+.button__primary {
+  @extend .button;
+
+  display: block;
+  width: 400px;
+  background-color: $primary;
+  color: white;
+
+  @media screen and (max-width: $breakpoint-tablet) {
+    width: 200px;
+  }
+
+  @media screen and (max-width: $breakpoint-mobile) {
+    width: 100px;
   }
 }
 

@@ -6,32 +6,21 @@
     <h2 class="homepage__title">First of all, the rules</h2>
     <p>It's simple, choose from one of the following figures:</p>
     <div class="homepage__game-figures">
-      <figure class="homepage__game-figures__figure">
-        <img
-          class="homepage__game-figures__img"
-          src="assets/Rock.png"
-          alt="rock figure"
-        />
-        <figcaption class="homepage__game-figures__caption">Rock</figcaption>
-      </figure>
-      <figure class="homepage__game-figures__figure">
-        <img
-          class="homepage__game-figures__img"
-          src="assets/Paper.png"
-          alt="paper figure"
-        />
-        <figcaption class="homepage__game-figures__caption">Paper</figcaption>
-      </figure>
-      <figure class="homepage__game-figures__figure">
-        <img
-          class="homepage__game-figures__img"
-          src="assets/Scissors.png"
-          alt="scissors figure"
-        />
-        <figcaption class="homepage__game-figures__caption">
-          Scissors
-        </figcaption>
-      </figure>
+      <game-move-figures
+        img="assets/Rock.png"
+        alt="rock figure"
+        caption="Rock"
+      />
+      <game-move-figures
+        img="assets/Paper.png"
+        alt="paper figure"
+        caption="Paper"
+      />
+      <game-move-figures
+        img="assets/Scissors.png"
+        alt="scissors figure"
+        caption="Scissors"
+      />
     </div>
     <p>
       Then the computer will respond with other of those figures, determining
@@ -51,5 +40,5 @@
     </ul>
     <p>Choose wisely to defeat our well trained computer!</p>
   </section>
-  <a>Let's play!</a>
+  <a class="button__primary" routerLink="/board">Let's play!</a>
 </main>

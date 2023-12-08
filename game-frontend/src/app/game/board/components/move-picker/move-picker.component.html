@@ -1,0 +1,9 @@
+<button
+  type="button"
+  *ngIf="figureData"
+  class="move-picker"
+  [ngClass]="{ 'move-picker--active': selectedMove === figure }"
+  (click)="moveClicked()"
+>
+  <img class="move-picker__img" [src]="figureData.img" [alt]="figureData.alt" />
+</button>

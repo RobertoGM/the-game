@@ -1,1 +1,49 @@
-<p>board works!</p>
+<main class="board">
+  <h1>Choose your move</h1>
+  <section class="board__game-selector">
+    <game-move-picker
+      *ngIf="!(cpuMove && selectedMove !== moveTypeEnum.ROCK)"
+      [figure]="moveTypeEnum.ROCK"
+      [selectedMove]="selectedMove"
+      (selected)="moveSelected(moveTypeEnum.ROCK)"
+    />
+    <game-move-picker
+      *ngIf="!(cpuMove && selectedMove !== moveTypeEnum.PAPER)"
+      [figure]="moveTypeEnum.PAPER"
+      [selectedMove]="selectedMove"
+      (selected)="moveSelected(moveTypeEnum.PAPER)"
+    />
+    <game-move-picker
+      *ngIf="!(cpuMove && selectedMove !== moveTypeEnum.SCISSORS)"
+      [figure]="moveTypeEnum.SCISSORS"
+      [selectedMove]="selectedMove"
+      (selected)="moveSelected(moveTypeEnum.SCISSORS)"
+    />
+  </section>
+
+  <button
+    *ngIf="!gameResult; else rematch"
+    class="button__primary"
+    [disabled]="!selectedMove || gameResult"
+    (click)="getCpuMove()"
+  >
+    Submit!
+  </button>
+
+  <ng-template #rematch>
+    <button class="button__primary" (click)="cleanMatch()">Rematch!</button>
+  </ng-template>
+
+  <section class="board__game-results" *ngIf="cpuMove">
+    <game-move-picker [figure]="cpuMove" />
+    <div *ngIf="gameResult">
+      <p *ngIf="gameResult === resultsEnum.Win">
+        You won, how is that even possible?!
+      </p>
+      <p *ngIf="gameResult === resultsEnum.Lose">
+        Oops, AI beated you! As expected...
+      </p>
+      <p *ngIf="gameResult === resultsEnum.Tie">Close combat, you tied!</p>
+    </div>
+  </section>
+</main>
