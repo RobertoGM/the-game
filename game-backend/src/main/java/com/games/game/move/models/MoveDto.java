@@ -1,4 +1,4 @@
-package com.games.game.move.Models;
+package com.games.game.move.models;
 
 import lombok.Data;
 

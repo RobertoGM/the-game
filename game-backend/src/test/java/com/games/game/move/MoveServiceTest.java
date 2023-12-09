@@ -1,6 +1,6 @@
 package com.games.game.move;
 
-import com.games.game.move.Models.MoveTypeEnum;
+import com.games.game.move.models.MoveTypeEnum;
 import com.games.game.move.service.MoveServiceImpl;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

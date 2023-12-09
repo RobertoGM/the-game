@@ -1,7 +1,7 @@
 package com.games.game.move.service;
 
-import com.games.game.move.Models.MoveDto;
-import com.games.game.move.Models.MoveTypeEnum;
+import com.games.game.move.models.MoveDto;
+import com.games.game.move.models.MoveTypeEnum;
 import org.springframework.stereotype.Service;
 
 @Service

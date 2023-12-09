@@ -1,6 +1,6 @@
 package com.games.game.move.controller;
 
-import com.games.game.move.Models.MoveDto;
+import com.games.game.move.models.MoveDto;
 import com.games.game.move.service.MoveServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

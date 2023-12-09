@@ -3,6 +3,11 @@ import { MoveTypeEnum, ResultsEnum } from '../../models/move.model';
 import { BoardService } from '../../services/board.service';
 import { MoveDto } from '../../models/moveDto.model';
 
+
+// Currently handling 2 main states. Player "move selection" and "result" of the game.
+// Integrated with backend to retrieve the CPU move, that would indicate the end of the player
+// selection and move the component towards the "result" state.
+
 @Component({
   selector: 'game-board',
   templateUrl: './board.component.html',
