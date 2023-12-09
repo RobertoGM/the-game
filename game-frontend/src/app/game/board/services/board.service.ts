@@ -11,7 +11,7 @@ export class BoardService {
   constructor(private http: HttpClient) {}
 
   getMove(): Observable<MoveDto> {
-    return this.http.get<MoveDto>('http://localhost:8080/move');
+    return this.http.get<MoveDto>('http://ec2-35-181-1-177.eu-west-3.compute.amazonaws.com:8080/move');
   }
 
   isPlayerWinner(playerMove: string, cpuMove: string): number {

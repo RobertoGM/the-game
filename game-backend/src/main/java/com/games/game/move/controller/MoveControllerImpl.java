@@ -12,7 +12,7 @@ public class MoveControllerImpl implements MoveController {
 
     @Autowired
     private MoveServiceImpl moveServiceImpl;
-    @CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = {"http://localhost:4200", "http://dsuoa725qnagh.cloudfront.net", "http://the-game-frontend.s3-website.eu-west-3.amazonaws.com/"})
     @GetMapping(value="/move")
     public MoveDto move() {
         return moveServiceImpl.cpuMove();
