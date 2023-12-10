@@ -1,6 +1,5 @@
 package com.games.game.move.models;
 
-
 import java.util.Random;
 
 public enum MoveTypeEnum {
