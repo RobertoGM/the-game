@@ -13,6 +13,11 @@ export const routes: Routes = [
     loadChildren: () =>
       import('./game/board/board.module').then((m) => m.BoardModule),
   },
+  {
+    path: 'stats',
+    loadChildren: () =>
+      import('./game/statistics/statistics.module').then((m) => m.StatisticsModule),
+  },
   // Set Home as entrypoint of the app routing
   {
     path: '',

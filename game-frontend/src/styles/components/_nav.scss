@@ -1,0 +1,27 @@
+@import "abstracts/variables";
+@import "abstracts/mixins";
+@import "base/typography";
+
+.common_nav {
+  ul {
+    @include pad-left();
+    @media screen and (max-width: $breakpoint-tablet) {
+      flex: 2;
+    }
+  }
+  ul li {
+    @include push();
+    @extend .font-bold;
+    @extend .font-m;
+    display: inline;
+    border-radius: 4px;
+
+    a {
+      color: $white;
+      text-decoration: none;
+      &:hover:not(.link-active) {
+        border-bottom: 2px solid rgba($white, 0.5);
+      }
+    }
+  }
+}

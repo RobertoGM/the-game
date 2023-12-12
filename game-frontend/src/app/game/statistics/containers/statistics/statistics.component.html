@@ -1,0 +1,36 @@
+<main class="statistics">
+  <h1>Come and check worldwide playing statistics</h1>
+  <section>
+    <div *ngIf="playerWinPercent !== undefined; else noGames">
+      <p>Player wins</p>
+      <p>{{ playerWinPercent }}%</p>
+      <p>of times!</p>
+    </div>
+    <ng-template #noGames>
+      There is no games yet recorded, play some more first the come and check
+      the values!
+    </ng-template>
+  </section>
+  <section>
+    <h2>Or check movement by movement how they historically perform</h2>
+    <nav class="statistics__nav">
+      <ul>
+        <li>
+          <a routerLink="/moveStats/ROCK" routerLinkActive="link-active">
+            Rock stat page
+          </a>
+        </li>
+        <li>
+          <a routerLink="/moveStats/PAPER" routerLinkActive="link-active">
+            Paper stats page
+          </a>
+        </li>
+        <li>
+          <a routerLink="/moveStats/SCISSORS" routerLinkActive="link-active">
+            Scissors stats page
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </section>
+</main>

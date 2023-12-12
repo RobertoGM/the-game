@@ -5,9 +5,9 @@ export enum MoveTypeEnum {
 }
 
 export enum ResultsEnum {
-  Win = 1,
-  Lose,
-  Tie,
+  Win = "WIN",
+  Lose = "LOSE",
+  Tie = "TIE",
 }
 
 export interface IMoveFigures {
@@ -33,3 +33,13 @@ export const MoveFigures: IAvailableMoveFigures = {
     alt: 'scissors move',
   },
 };
+
+export interface MoveDto {
+  move: MoveTypeEnum;
+}
+
+export interface GameDto {
+  playerMove: MoveTypeEnum;
+  cpuMove: MoveTypeEnum;
+  result: string;
+}

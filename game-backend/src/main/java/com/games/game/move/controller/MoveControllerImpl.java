@@ -14,9 +14,9 @@ public class MoveControllerImpl implements MoveController {
 
     @Autowired
     private MoveServiceImpl moveServiceImpl;
-    @CrossOrigin(origins = {"http://localhost:4200", "http://dsuoa725qnagh.cloudfront.net", "http://the-game-frontend.s3-website.eu-west-3.amazonaws.com/"})
-    @PostMapping(value="/move", consumes= MediaType.APPLICATION_JSON_UTF8_VALUE)
-    public GameDto move(MoveDto playerMove) {
+    @CrossOrigin(origins = {"http://localhost:4200", "http://dsuoa725qnagh.cloudfront.net"})
+    @PutMapping(value="/move", consumes = MediaType.APPLICATION_JSON_VALUE)
+    public GameDto move(@RequestBody MoveDto playerMove) {
         return moveServiceImpl.cpuMove(playerMove);
     }
 }

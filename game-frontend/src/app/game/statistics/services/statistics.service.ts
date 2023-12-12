@@ -1,12 +1,12 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { GameDto, MoveTypeEnum } from '../models/move.model';
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
-export class BoardService {
+export class StatisticsService {
+
   constructor(private http: HttpClient) {}
 
   // Consider moving this into a environment specific variable.
@@ -15,9 +15,12 @@ export class BoardService {
 
   readonly BASE_URL_LOCAL: string = 'http://localhost:8080';
 
-  getResult(playerMove: MoveTypeEnum): Observable<GameDto> {
-    return this.http.put<GameDto>(`${this.BASE_URL_LOCAL}/move`, {
-      move: playerMove,
-    });
+  getPlayerWinStats(): Observable<number> {
+    return this.http.get<number>(`${this.BASE_URL_LOCAL}/statistics`);
   }
+
+  getMoveStatistics(move: string): Observable<number> {
+    return this.http.get<number>(`${this.BASE_URL_LOCAL}/statistics/${move}`);
+  }
+
 }

@@ -13,5 +13,5 @@ public class Game {
     private Long id;
     private String CpuMove;
     private String PlayerMove;
-    private String result;
+    private String Result;
 }

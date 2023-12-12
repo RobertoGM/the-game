@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
-import { MoveTypeEnum, ResultsEnum } from '../../models/move.model';
+import { GameDto, MoveTypeEnum, ResultsEnum } from '../../models/move.model';
 import { BoardService } from '../../services/board.service';
-import { MoveDto } from '../../models/moveDto.model';
-
 
 // Currently handling 2 main states. Player "move selection" and "result" of the game.
 // Integrated with backend to retrieve the CPU move, that would indicate the end of the player
@@ -14,30 +12,29 @@ import { MoveDto } from '../../models/moveDto.model';
   styleUrl: './board.component.scss',
 })
 export class BoardComponent {
-  selectedMove: string | undefined;
+  selectedMove: MoveTypeEnum | undefined;
   cpuMove: string | undefined;
-  gameResult: number | undefined;
+  gameResult: string | undefined;
 
   readonly moveTypeEnum = MoveTypeEnum;
   readonly resultsEnum = ResultsEnum;
 
   constructor(public boardService: BoardService) {}
 
-  moveSelected(move: string): void {
+  moveSelected(move: MoveTypeEnum): void {
     this.selectedMove = this.selectedMove !== move ? move : undefined;
   }
 
   getCpuMove(): void {
     this.cpuMove = undefined;
-    this.boardService.getMove().subscribe((moveDto: MoveDto) => {
-      if (this.selectedMove) {
-        this.cpuMove = moveDto.move;
-        this.gameResult = this.boardService.isPlayerWinner(
-          this.selectedMove,
-          moveDto.move
-        );
-      }
-    });
+    if (this.selectedMove) {
+      this.boardService
+        .getResult(this.selectedMove)
+        .subscribe((gameRes: GameDto) => {
+          this.cpuMove = gameRes.cpuMove;
+          this.gameResult = gameRes.result;
+        });
+    }
   }
 
   cleanMatch(): void {

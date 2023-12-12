@@ -43,9 +43,22 @@ public class MoveServiceImpl implements MoveService {
         }
 
         if (playerMove == MoveTypeEnum.PAPER) {
+            if (cpuMove == MoveTypeEnum.SCISSORS) {
+                return ResultEnum.LOSE;
+            }
             return cpuMove == MoveTypeEnum.ROCK ? ResultEnum.WIN : ResultEnum.LOSE;
-        } else {
-            return cpuMove == MoveTypeEnum.ROCK ? ResultEnum.LOSE : ResultEnum.WIN;
         }
+
+
+        if (playerMove == MoveTypeEnum.SCISSORS) {
+            if (cpuMove == MoveTypeEnum.PAPER) {
+                return ResultEnum.WIN;
+            }
+        } else {
+            if (cpuMove == MoveTypeEnum.SCISSORS) {
+                return ResultEnum.WIN;
+            }
+        }
+        return cpuMove == MoveTypeEnum.ROCK ? ResultEnum.WIN : ResultEnum.LOSE;
     }
 }

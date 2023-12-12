@@ -1,4 +1,5 @@
 @import "abstracts/mixins";
+@import "components/nav";
 
 .board {
   @include pad();
