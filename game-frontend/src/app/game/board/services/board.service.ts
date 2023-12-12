@@ -16,7 +16,7 @@ export class BoardService {
   readonly BASE_URL_LOCAL: string = 'http://localhost:8080';
 
   getResult(playerMove: MoveTypeEnum): Observable<GameDto> {
-    return this.http.put<GameDto>(`${this.BASE_URL_LOCAL}/move`, {
+    return this.http.put<GameDto>(`${this.BASE_URL}/move`, {
       move: playerMove,
     });
   }

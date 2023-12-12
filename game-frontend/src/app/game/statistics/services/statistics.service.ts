@@ -17,11 +17,11 @@ export class StatisticsService {
   readonly BASE_URL_LOCAL: string = 'http://localhost:8080';
 
   getPlayerWinStats(): Observable<number> {
-    return this.http.get<number>(`${this.BASE_URL_LOCAL}/statistics`);
+    return this.http.get<number>(`${this.BASE_URL}/statistics`);
   }
 
   getMoveStatistics(move: string): Observable<MoveStatsDto> {
-    return this.http.get<MoveStatsDto>(`${this.BASE_URL_LOCAL}/statistics/${move}`);
+    return this.http.get<MoveStatsDto>(`${this.BASE_URL}/statistics/${move}`);
   }
 
 }
