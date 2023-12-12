@@ -50,9 +50,7 @@ Within each page folder I split in this structure of folders:
 Used Springboot with Gradle, added support for web services, Lombok and Swagger. Also included some metric coming from a docker compose with Prometheus and Grafana.
 
 Technologies that could be good to add:
- - JPA when incorporating a DB
-    - H2 if going simple
-    - Mysql docker image
+ - Use an actual DB like Mysql instead of a volatile H2
  - Logging
 
  ## Folder structure
