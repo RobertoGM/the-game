@@ -1,0 +1,18 @@
+version: "3.9"
+services:
+    backend:
+        image: game-backend
+        container_name: game-backend
+        build:
+            context: ./game-backend
+        ports:
+            - "9000:80"
+    frontend:
+        image: game-frontend
+        container_name: game-frontend
+        build:
+            context: ./game-frontend
+        ports:
+            - "4200:80"
+        depends_on:
+            - backend
