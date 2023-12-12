@@ -9,6 +9,7 @@ import java.util.List;
 
 @Repository
 public interface ResultRepository extends JpaRepository<Game, Long> {
-    @Query("SELECT g FROM Game g WHERE g.PlayerMove = ?1 AND g.Result = 'WIN'")
+    // Custom query to ease finding winning games for a particular move
+    @Query("SELECT g FROM Game g WHERE g.playerMove = ?1 AND g.result = 'WIN'")
     List<Game> findAllWinnerGamesByMove(String moveType);
 }

@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { StatisticsComponent } from './containers/statistics/statistics.component';
+import { MoveStatsComponent } from './containers/move-stats/move-stats.component';
 
 const routes: Routes = [
   {
@@ -9,8 +10,8 @@ const routes: Routes = [
     component: StatisticsComponent,
   },
   {
-    path: 'moveStats/{move}',
-    component: StatisticsComponent,
+    path: 'moveStats/:move',
+    component: MoveStatsComponent,
   },
 ];
 

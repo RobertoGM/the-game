@@ -1,0 +1,10 @@
+@import "abstracts/mixins";
+
+.move-stats-main {
+    @include pad();
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

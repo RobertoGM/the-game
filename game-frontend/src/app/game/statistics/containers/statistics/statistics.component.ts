@@ -2,12 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { StatisticsService } from '../../services/statistics.service';
 
 @Component({
-  selector: 'app-statistics',
+  selector: 'game-statistics',
   templateUrl: './statistics.component.html',
   styleUrl: './statistics.component.scss',
 })
 export class StatisticsComponent implements OnInit {
-  playerWinPercent: number | undefined;
+  playerWinPercent: number = 0;
 
   constructor(public statService: StatisticsService) {}
 

@@ -1,1 +1,11 @@
-<p>move-stats works!</p>
+<main class="move-stats-main">
+  <h1>Stats for {{ move | lowercase }}</h1>
+  <section>
+    <game-stat-panel
+      display="number"
+      [title]="'Victories total for: ' + move"
+      [value]="value"
+    />
+  </section>
+  <a class="button__primary" routerLink="/stats">Go back</a>
+</main>

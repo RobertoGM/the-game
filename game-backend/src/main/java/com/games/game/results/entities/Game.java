@@ -11,7 +11,7 @@ public class Game {
     @Id
     @GeneratedValue
     private Long id;
-    private String CpuMove;
-    private String PlayerMove;
-    private String Result;
+    private String cpuMove;
+    private String playerMove;
+    private String result;
 }

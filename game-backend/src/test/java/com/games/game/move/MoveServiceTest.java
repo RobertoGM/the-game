@@ -5,10 +5,12 @@ import com.games.game.move.models.MoveTypeEnum;
 import com.games.game.move.service.MoveServiceImpl;
 import com.games.game.results.entities.ResultEnum;
 import com.games.game.results.models.GameDto;
+import com.games.game.results.repository.ResultRepository;
 import jakarta.validation.constraints.AssertTrue;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
+import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.util.Assert;
@@ -23,6 +25,8 @@ import static org.junit.jupiter.api.Assertions.*;
 @ExtendWith(MockitoExtension.class)
 class MoveServiceTest {
 
+    @Mock
+    ResultRepository resultRepository;
     @InjectMocks
     private MoveServiceImpl moveServiceImpl;
     @Test

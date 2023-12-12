@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { MoveStatsDto } from '../models/statistics.model';
 
 @Injectable({
   providedIn: 'root'
@@ -19,8 +20,8 @@ export class StatisticsService {
     return this.http.get<number>(`${this.BASE_URL_LOCAL}/statistics`);
   }
 
-  getMoveStatistics(move: string): Observable<number> {
-    return this.http.get<number>(`${this.BASE_URL_LOCAL}/statistics/${move}`);
+  getMoveStatistics(move: string): Observable<MoveStatsDto> {
+    return this.http.get<MoveStatsDto>(`${this.BASE_URL_LOCAL}/statistics/${move}`);
   }
 
 }

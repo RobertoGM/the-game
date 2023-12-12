@@ -18,22 +18,24 @@ public class ResultServiceImpl implements ResultService {
     @Autowired
     private ResultRepository resultRepository;
 
-    public Float playerWinStatistics()  {
+    // Retrieving the full list of games and the games that have been won by the player, this method calculates the percentage is wins for the players.
+    public Integer playerWinStatistics()  {
         Collection<Game> allGames = resultRepository.findAll();
         // Done using stream and Lambdas just to show off ;)
         List<Game> playerWonGames = allGames.stream().filter(g -> g.getResult().equals(ResultEnum.WIN.toString())).collect(Collectors.toList());
         // Don't allow the operation to divide by 0
-        return allGames.size() > 0 ? ((((float)playerWonGames.size()) / allGames.size())) * 100 : 0;
+        return allGames.size() > 0 ? (int)((((float)playerWonGames.size()) / allGames.size()) * 100) : 0;
     }
 
+    // Accepting one of the valid moves, look for the games won using that particular move and return the quantity and the move.
     public MoveStatsDto moveStatistics(String move)  {
         // Implemented from the repository Query
-        Collection<Game> scissorsWon = resultRepository.findAllWinnerGamesByMove(move.toString());
+        Collection<Game> moveWon = resultRepository.findAllWinnerGamesByMove(move.toString());
 
-        MoveStatsDto scissorsStats = new MoveStatsDto();
-        scissorsStats.setMove(MoveTypeEnum.valueOf(move));
-        scissorsStats.setWinPercent(scissorsWon.size());
-        return scissorsStats;
+        MoveStatsDto moveStats = new MoveStatsDto();
+        moveStats.setMove(MoveTypeEnum.valueOf(move));
+        moveStats.setWinPercent(moveWon.size());
+        return moveStats;
     }
 
 

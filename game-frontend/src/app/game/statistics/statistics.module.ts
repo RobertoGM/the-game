@@ -6,9 +6,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { StatisticsService } from './services/statistics.service';
 
 import { MoveStatsComponent } from './containers/move-stats/move-stats.component';
+import { StatPanelComponent } from './components/stat-panel/stat-panel.component';
 
 @NgModule({
-  declarations: [StatisticsComponent, MoveStatsComponent],
+  declarations: [StatisticsComponent, MoveStatsComponent, StatPanelComponent],
   providers: [StatisticsService],
   imports: [CommonModule, StatisticsRoutingModule, HttpClientModule],
 })

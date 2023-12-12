@@ -1,0 +1,10 @@
+<article class="stat-panel-main">
+  <p>{{ title }}</p>
+  <div *ngIf="display === 'percent'" class="stat-panel-main__progress-bar">
+    <span [ngStyle]="{ width: value + '%' }">{{ value }}%</span>
+  </div>
+  <div *ngIf="display === 'number'" class="stat-panel-main__absolute-value">
+    <span>{{ value }}</span>
+  </div>
+  <p>{{ subtitle }}</p>
+</article>
