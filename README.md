@@ -4,7 +4,8 @@ Repository to put together frontend and backend for a simple rock paper scissors
 # Deployed
 Deployed on AWS in this URL: http://dsuoa725qnagh.cloudfront.net/
 
-Warning: Given I used Ec2 for hosting the backend, the protocol has been HTTP instead of HTTPS, making it unavailable on Chrome for Android.
+[!WARNING]  
+Given I used Ec2 for hosting the backend, the protocol has been HTTP instead of HTTPS, making it unavailable on Chrome for Android.
 
 # Frontend
 Used Angular v17 with sass, ESlint and tested using default Karma and Jasmine.
